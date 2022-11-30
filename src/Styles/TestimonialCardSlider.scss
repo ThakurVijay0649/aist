@@ -1,0 +1,49 @@
+@import "mixin";
+@import "colors";
+
+.testimonial-card {
+  width: 550px;
+  margin: auto;
+  height: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  padding: 2rem 1rem;
+  h3 {
+    color: $purple;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .testimonial-description {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 33px;
+    margin: 0.6rem 0;
+  }
+  .testimonial-source {
+    font-weight: 400;
+    font-size: 14px;
+    padding-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+  .testimonial-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    color: $background4;
+  }
+  .testimonial-place {
+    font-size: 14px;
+    color: $background2;
+  }
+}
+.sc-bwzfXH {
+  &:last-child {
+    bottom: 200px !important;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .testimonial-card {
+    width: 100% !important;
+  }
+}

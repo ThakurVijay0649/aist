@@ -1,0 +1,26 @@
+@import "mixin";
+@import "colors";
+
+.chatbot {
+  @include displayFlex(row, center, center);
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 90;
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $lightgreen;
+    left: 86%;
+    top: 64%;
+  }
+}

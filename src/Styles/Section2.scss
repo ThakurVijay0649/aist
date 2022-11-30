@@ -1,0 +1,48 @@
+@import "mixin";
+@import "colors";
+
+.about-aist {
+  @include displayFlex(column, center, center);
+  text-align: center;
+  padding: 3rem 1rem;
+  > h1 {
+    @include heading;
+  }
+  > p {
+    color: $para1;
+    padding: 1rem 3rem;
+    font-size: 15px;
+    line-height: 30px;
+  }
+  .content-row {
+    @include displayFlex(row, center, center);
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    .content-col {
+      flex-basis: 20%;
+      padding: 1rem;
+      @include displayFlex(column, center, center);
+      padding: 1rem;
+      .content-img {
+        height: 100px;
+        width: 100px;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        object-fit: contain;
+        padding: 1rem;
+        > img {
+          width: 100%;
+        }
+        &:hover {
+          background-color: $purple;
+        }
+      }
+      > h2 {
+        font-size: 17px;
+        font-weight: bolder;
+        word-spacing: 0.2rem;
+      }
+    }
+  }
+}

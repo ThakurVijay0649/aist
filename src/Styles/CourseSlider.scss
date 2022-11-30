@@ -1,0 +1,46 @@
+@import "mixin";
+@import "colors";
+
+.aist-courses {
+  margin-bottom: 7rem;
+ > h1{
+    @include heading;
+  }
+  .course-slider {
+    @include displayFlex(row, flex-start, center);
+     width: 90%;
+    margin: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  
+}
+
+.all-courses-link {
+    color: $white;
+    background: $purple;
+    border: 2px solid $purple;
+    @include displayFlex(row, center, center);
+    padding: 1rem;
+    width: 250px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    &:hover {
+      color: $purple;
+      background: $white;
+      border: 2px solid $purple;
+    }
+    > svg {
+      margin-left: 0.5rem;
+    }
+  }
+
+.all-courses-link-hover{
+  &:hover{
+    background-color: transparent;
+  }
+}

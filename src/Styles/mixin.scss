@@ -1,0 +1,13 @@
+@mixin displayFlex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin heading {
+  color: $background;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 1rem 0;
+}

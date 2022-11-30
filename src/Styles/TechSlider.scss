@@ -1,0 +1,18 @@
+@import "mixin";
+@import "colors";
+
+.tech-slider-container {
+  h1 {
+    @include heading;
+  }
+  .tech-slider {
+    @include displayFlex(row, flex-start, center);
+    width: 80%;
+    margin: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

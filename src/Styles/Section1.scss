@@ -1,0 +1,100 @@
+@import "mixin";
+@import "colors";
+
+.home-section {
+  @include displayFlex(row, center, center);
+  background-image: linear-gradient(
+      to right,
+      rgba(52, 4, 48, 0.4),
+      rgb(122 5 115)
+    ),
+    url(../images/bg.png);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  .left-home-section {
+    flex-basis: 50%;
+    @include displayFlex(column, center, flex-start);
+    padding: 2rem;
+    h1 {
+      font-size: 3rem;
+      color: $white;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      user-select: none;
+      span {
+        color: $purple;
+      }
+    }
+    .join-link {
+      @include displayFlex(row, center, center);
+      .get-started-link {
+        text-decoration: none;
+        color: $white;
+        font-size: 1.2rem;
+        padding: 1rem 3rem;
+        border-radius: 30px;
+        border: 2px solid $background;
+        background-color: $background;
+        margin-right: 1rem;
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover {
+          background-color: transparent;
+          border: 2px solid $background;
+          color: $background;
+        }
+      }
+    }
+    .aist-info {
+      @include displayFlex(row, center, center);
+      margin-top: 1rem;
+      > div {
+        @include displayFlex(row, center, center);
+        margin-right: 1rem;
+        > img {
+          width: 40px;
+          height: 40px;
+          fill: $white;
+          margin-right: 0.5rem;
+        }
+        > p {
+          color: $white;
+          font-size: 14px;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+  .right-home-section {
+    flex-basis: 50%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .home-section {
+    flex-direction: column-reverse !important;
+    .left-home-section {
+      padding: 1rem 0 !important;
+      h1{
+        font-size: 2rem !important;
+      }
+      .join-link{
+        flex-direction: column !important;
+        margin: auto;
+        .get-started-link{
+          margin: 0.5rem 0 !important;
+        }
+      }
+    }
+    .right-home-section {
+      @include displayFlex(row, center, center);
+      img {
+        width: 60%;
+      }
+    }
+  }
+}

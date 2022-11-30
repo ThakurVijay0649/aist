@@ -1,0 +1,160 @@
+@import "mixin";
+@import "colors";
+
+footer {
+  background-color: $background;
+  color: $white;
+  padding: 0 4rem;
+  .upper-footer {
+    @include displayFlex(row, space-between, center);
+    border-bottom: 1px solid $white;
+    .social {
+      @include displayFlex(column, center, flex-start);
+      padding-top: 0.5rem;
+      h2 {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .social-links {
+        @include displayFlex(row, center, center);
+        margin: 0.7rem 0;
+        a {
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+  .footer-row {
+    display: grid;
+    grid-template-columns: 15% 40% 15% 30%;
+    border-bottom: 1px solid $white;
+    .footer-col {
+      padding: 1rem;
+      @include displayFlex(column, flex-start, flex-start);
+      h2 {
+        font-size: 18px;
+        margin: 6rem 0 0.8rem;
+      }
+      ul {
+        li {
+          list-style: none;
+          line-height: 35px;
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+      p {
+        font-size: 15px;
+      }
+      .join-btn {
+        border: 2px solid $purple;
+        color: $purple;
+        @include displayFlex(row, center, center);
+        width: 100%;
+        text-align: center;
+        padding: 16px;
+        border-radius: 10px;
+        margin: 19px 0;
+        > svg {
+          margin-left: 0.5rem;
+        }
+        &:hover {
+          color: $lightgreen;
+          background-color: $purple;
+        }
+      }
+      img {
+        width: 100%;
+      }
+      form {
+        background: white;
+        width: 100%;
+        margin: 1rem 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 33px;
+        input {
+          border: none;
+          outline: none;
+          width: 100%;
+          border-radius: 33px;
+          padding: 20px 10px;
+        }
+        button {
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 10px;
+          margin: 0 23px;
+          border-radius: 30px;
+          width: 50%;
+          background: $purple;
+          color: $white;
+          font-weight: bold;
+        }
+      }
+    }
+    .join-col {
+      padding: 1rem 2rem;
+    }
+  }
+  .bottom-para {
+    @include displayFlex(row, center, center);
+    padding: 1rem;
+    p {
+      a {
+        color: $footerLinkColor;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  footer {
+    .upper-footer {
+      padding-top: 1rem;
+    }
+    .footer-row {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  footer {
+    .upper-footer {
+      flex-direction: column !important;
+
+      .social {
+        align-items: center !important;
+      }
+    }
+    .footer-row {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  footer {
+    padding: 0 1rem !important;
+    .footer-row {
+      grid-template-columns: repeat(1, 1fr) !important;
+      .footer-col {
+        padding: 0 !important;
+      }
+    }
+    .bottom-para {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+    }
+  }
+}

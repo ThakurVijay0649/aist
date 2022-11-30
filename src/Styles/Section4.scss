@@ -1,0 +1,36 @@
+@import "mixin";
+@import "colors";
+
+.feartured-courses-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: $background3;
+  grid-gap: 1rem;
+  padding: 5rem;
+  margin: 5rem 0;
+  .featured-courses-col1 {
+    @include displayFlex(column, center, center);
+    text-align: center;
+    color: $white;
+  }
+}
+
+@media screen and (max-width: 1235px) {
+  .feartured-courses-row {
+    padding: 5rem 1rem !important;
+    grid-template-columns: repeat(2, 1fr);
+    .featured-courses-col1 {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .feartured-courses-row {
+    grid-template-columns: repeat(1, 1fr) !important;
+    .featured-courses-col {
+      width: 100%;
+      margin: auto;
+    }
+  }
+}
